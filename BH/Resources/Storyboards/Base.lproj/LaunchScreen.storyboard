@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,28 +22,10 @@
                                 <color key="textColor" red="0.22600325939999999" green="0.024107400330000001" blue="0.57650893930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babylon-health-logo" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-Pq-UIF">
-                                <rect key="frame" x="40" y="296.5" width="295" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="8wI-Pq-UIF" secondAttribute="height" multiplier="4:1" id="D2G-ni-Ufl"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test task for" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GgK-LX-31R">
-                                <rect key="frame" x="140" y="235.5" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.22600325939999999" green="0.024107400330000001" blue="0.57650893930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8wI-Pq-UIF" firstAttribute="top" secondItem="GgK-LX-31R" secondAttribute="bottom" constant="40" id="8pe-Fg-jJx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8wI-Pq-UIF" secondAttribute="trailing" constant="40" id="CKC-qP-GBl"/>
                             <constraint firstItem="dOO-12-6JH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Fx2-fg-EKM"/>
-                            <constraint firstItem="8wI-Pq-UIF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NnZ-4z-MLf"/>
-                            <constraint firstItem="GgK-LX-31R" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XAb-hp-4cA"/>
-                            <constraint firstItem="8wI-Pq-UIF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kap-CL-H7j"/>
-                            <constraint firstItem="8wI-Pq-UIF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="uXA-f2-egE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dOO-12-6JH" secondAttribute="bottom" constant="20" id="yVm-0U-wy0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,7 +36,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="babylon-health-logo" width="300" height="75"/>
-    </resources>
 </document>

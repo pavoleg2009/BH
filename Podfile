@@ -6,8 +6,8 @@ target 'BH' do
   use_frameworks!
 
   # Pods for BH
-    pod 'RxSwift', ' ~> 4.0'
-    pod 'RxCocoa', ' ~> 4.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'RealmSwift'
     pod 'RxRealm'
     pod 'XCoordinator', '~> 1.0'

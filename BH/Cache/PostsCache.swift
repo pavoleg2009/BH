@@ -38,7 +38,8 @@ final class PostsCacheDefault: PostsCache {
     func saveItems<T: DatabaseConvertible>(items: [T]) {
         // Should be handled better in production
         try? realm.write {
-            realm.add(items.map { $0.databaseModel()} , update: true)
+            
+            realm.add(items.map { $0.databaseModel()} , update: .modified)
         }
     }
     

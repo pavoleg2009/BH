@@ -34,7 +34,7 @@ final class PostsCacheMock: PostsCache {
     
     func saveItems<T: DatabaseConvertible>(items: [T]) {
         try? realm.write {
-            realm.add(items.map { $0.databaseModel()} , update: true)
+            realm.add(items.map { $0.databaseModel()} , update: .modified)
         }
     }
     
@@ -88,13 +88,13 @@ final class PostsCacheMock: PostsCache {
             TestsHelper.posts
                 .map { $0.databaseModel() }
                 .forEach {
-                    realm.add($0, update: true)
+                    realm.add($0, update: .modified)
             }
             
             TestsHelper.comments
                 .map { $0.databaseModel() }
                 .forEach {
-                    realm.add($0, update: true)
+                    realm.add($0, update: .modified)
             }
         }
     }
