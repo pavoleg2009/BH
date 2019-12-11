@@ -106,7 +106,4 @@ class PostDetailsViewModelTests: XCTestCase {
         XCTAssertEqual(expectedCommentsConuntStrings, testOutputs.receivedCommentsCountStrings)
         XCTAssertEqual(testOutputs.receivedErrors, expextedErrors)
     }
-    
-    
-    
 }

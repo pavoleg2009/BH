@@ -20,7 +20,7 @@ struct RealmProvider: RealmProviderProtocol {
     
     // MARK: Public properties
     
-    public static var posts: RealmProvider = {
+    static var posts: RealmProvider = {
         return RealmProvider(config: postsConfiguration)
     }()
     
@@ -31,7 +31,6 @@ struct RealmProvider: RealmProviderProtocol {
         }
         return realm
     }
-    
     
     // MARK: Private properties
     

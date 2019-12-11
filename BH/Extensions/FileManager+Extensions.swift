@@ -11,6 +11,7 @@ import Foundation
 extension FileManager {
     
     public static var documentDirectory: URL {
+        // swiftlint:disable:next force_unwrapping
         return self.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
 }

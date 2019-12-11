@@ -29,7 +29,7 @@ class ApiEndpointsTests: XCTestCase {
         let url = ApiEndpoint.posts.url()
         
         // Assert
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200,
@@ -59,7 +59,7 @@ class ApiEndpointsTests: XCTestCase {
         let url = ApiEndpoint.users.url()
         
         // Assert
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200,
@@ -89,7 +89,7 @@ class ApiEndpointsTests: XCTestCase {
         let url = ApiEndpoint.comments.url()
         
         // Assert
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse,
                 httpResponse.statusCode == 200,

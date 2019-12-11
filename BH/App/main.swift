@@ -15,7 +15,5 @@ let appDelegateClass: AnyClass? = NSClassFromString("\(testTagetName).TestingApp
 let argc = CommandLine.argc
 let argv = CommandLine.unsafeArgv
 
-_ = UIApplicationMain(argc,
-                      argv,
-                      nil,
-                      NSStringFromClass(appDelegateClass!))
+// swiftlint:disable:next force_unwrapping
+_ = UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass!))

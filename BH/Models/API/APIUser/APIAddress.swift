@@ -27,7 +27,6 @@ extension APIAddress: Codable {
         case street, suite, city, zipcode, geo
     }
     
-    
     // MARK: Lifecycle
     
     init(from decoder: Decoder) throws {

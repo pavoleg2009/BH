@@ -28,13 +28,11 @@ final class ApiServiceDefault: ApiService {
     
     private let urlSession: URLSession
     
-    
     // MARK: Lifecycle
     
     init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
-    
     
     // MARK: Public methods
     
@@ -50,7 +48,6 @@ final class ApiServiceDefault: ApiService {
         return getItems()
     }
     
-    
     // MARK: Private methods
     
     func getItems<T: Requestable>() -> Single<[T]> {
@@ -61,10 +58,10 @@ final class ApiServiceDefault: ApiService {
         let response = request
             .flatMap { request -> Observable<(response: HTTPURLResponse, data: Data)> in
                 URLSession.shared.rx.response(request: request)
-        }
+            }
         
         let successfulResponse = response
-            .filter { (response, _ ) -> Bool in
+            .filter { response, _ -> Bool in
                 200..<400 ~= response.statusCode
             }
             .flatMap { _, data -> Observable<[T]> in

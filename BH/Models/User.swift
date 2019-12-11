@@ -57,5 +57,3 @@ extension User: DatabaseConvertible {
         return dbUser
     }
 }
-
-

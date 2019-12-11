@@ -16,13 +16,12 @@ final class CommentCell: UITableViewCell {
     @IBOutlet private var emailLabel: UILabel!
     @IBOutlet private var bodyLabel: UILabel!
     
-    
     // MARK: Public methods
     
     func configure(with comment: Comment) {
         
         commentNameLabel.text = "\(comment.name ?? "")"
-        emailLabel.text =  comment.email
-        bodyLabel.text =  comment.body
+        emailLabel.text = comment.email
+        bodyLabel.text = comment.body
     }
 }

@@ -15,7 +15,6 @@ class PostCell: UITableViewCell {
     @IBOutlet private var authorLabel: UILabel!
     @IBOutlet private var postTitleLabel: UILabel!
     
-    
     // MARK: Public methods
     
     func configure(using post: Post) {

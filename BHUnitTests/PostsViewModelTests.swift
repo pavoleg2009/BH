@@ -63,7 +63,8 @@ class PostsViewModelTests: XCTestCase {
         // Act
         let viewModel = PostsViewModel(
             postsCache: postsCacheMock,
-            postsService: postsServiceMock, router: AppCoordinator().anyRouter)
+            postsService: postsServiceMock,
+            router: AppCoordinator().anyRouter)
         
         viewModel.posts.asObservable()
             .do(onNext: { _ in promise.fulfill() })
@@ -180,8 +181,8 @@ class PostsViewModelTests: XCTestCase {
         
         let viewModel = PostsViewModel(
                 postsCache: postsCacheMock,
-                postsService: postsServiceMock, router: AppCoordinator().anyRouter)
-        
+                postsService: postsServiceMock,
+                router: AppCoordinator().anyRouter)
         
         let postsObserver = scheduler.createObserver([Post].self)
         let promise = expectation(description: "")
@@ -194,9 +195,8 @@ class PostsViewModelTests: XCTestCase {
          */
         promise.expectedFulfillmentCount = 4
 
-
         viewModel.posts
-            .do(onNext: {_ in promise.fulfill() })
+            .do(onNext: { _ in promise.fulfill() })
             .bind(to: postsObserver)
             .disposed(by: bag)
         
@@ -218,4 +218,3 @@ class PostsViewModelTests: XCTestCase {
         XCTAssertEqual(receivedPostsCount, [0, 0, 3, 3])
     }
 }
-

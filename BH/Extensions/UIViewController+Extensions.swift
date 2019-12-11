@@ -18,7 +18,7 @@ extension UIViewController {
         guard let vc = storyboard.instantiateViewController(
             withIdentifier: String(describing: self)
             ) as? T else {
-                fatalError()
+                fatalError("Could not init view controller of typr: \(type(of: T.self))")
         }
         return vc
     }

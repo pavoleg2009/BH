@@ -30,7 +30,6 @@ extension APIUser: Codable {
         case id, name, username, email, address, phone, website, company
     }
     
-    
     // MARK: Lifecycle
     
     init(from decoder: Decoder) throws {

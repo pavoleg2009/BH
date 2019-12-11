@@ -27,6 +27,7 @@ extension Realm {
     
     func addForTesting(objects: [Object]) {
         
+        // swiftlint:disable:next force_try
         try! write {
             add(objects)
         }

@@ -21,13 +21,11 @@ final class PostsServiceDefault: PostsService {
     
     private let apiService: ApiService
     
-    
     // MARK: Lifecycle
     
     init(apiService: ApiService = ApiServiceDefault()) {
         self.apiService = apiService
     }
-    
     
     // MARK: Public methods
     
@@ -54,7 +52,6 @@ final class PostsServiceDefault: PostsService {
         }
     }
     
-    
     // MARK: Private methods
     
     private func createPosts(with apiPostsArr: [APIPost], and apiUsersArr: [APIUser]) -> [Post] {
@@ -63,11 +60,10 @@ final class PostsServiceDefault: PostsService {
         
         return apiPostsArr.compactMap({ apiPost -> Post? in
 
-            guard let user = users.first(where: { (user) -> Bool in
-                apiPost.userId == user.id
-            }) else {
-                return nil
-            }
+            guard let user = users
+                .first(where: { user -> Bool in apiPost.userId == user.id })
+                else { return nil }
+            
             return Post(with: apiPost, and: user)
         })
     }

@@ -36,7 +36,6 @@ final class PostsViewModel: PostsViewModelProtocol {
     let isLoading: Driver<Bool>
     let errorMessage: Driver<String>
     
-    
     // MARK: Private properties
     
     private let router: AnyRouter<AppRoute>
@@ -44,7 +43,6 @@ final class PostsViewModel: PostsViewModelProtocol {
     private let postsService: PostsService
     private let errorMessagePublisher: PublishSubject<String> = .init()
     private let bag = DisposeBag()
-    
     
     // MARK: Lifecycle
     
@@ -64,7 +62,7 @@ final class PostsViewModel: PostsViewModelProtocol {
                     .skip(1) // initial empty array
                     .map { _ in false },
                 errorMessagePublisher.asObservable().map { _ in false }
-            ])
+        ])
             .merge()
             .startWith(true)
             .asDriver(onErrorJustReturn: false)
@@ -94,7 +92,6 @@ final class PostsViewModel: PostsViewModelProtocol {
             .disposed(by: bag)
     }
     
-    
     // MARK: Private methods
     
     private func loadPostsFromCache() {
@@ -109,14 +106,13 @@ final class PostsViewModel: PostsViewModelProtocol {
         let postsResult = postsService
             .getPosts()
         
-        let errorHandler: (Error) -> Observable<[Post]> = { [weak self] (error) in
+        let errorHandler: (Error) -> Observable<[Post]> = { [weak self] error in
             
             guard let strongSelf = self else { return .never() }
             
             if let error = error as? ApiError {
                 strongSelf.errorMessagePublisher.onNext(error.errorMessage())
-            }
-            else  {
+            } else {
                 strongSelf.errorMessagePublisher.onNext((error as NSError).localizedDescription)
             }
             return .never()
@@ -127,6 +123,6 @@ final class PostsViewModel: PostsViewModelProtocol {
             .subscribe(onNext: { [weak self] posts in
                 self?.postsCache.saveItems(items: posts)
             })
-            .disposed(by:bag)
+            .disposed(by: bag)
     }
 }

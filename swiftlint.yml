@@ -1,0 +1,232 @@
+# Rules ---------------------------------------
+
+opt_in_rules:
+  - anyobject_protocol
+  - array_init                              
+#  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+#  - conditional_returns_on_newline
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - custom_rules
+#  - discouraged_optional_boolean
+#  - discouraged_optional_collection
+  - explicit_enum_raw_value
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - explicit_init
+  - explicit_self                   
+#  - fallthrough
+  - fatal_error_message
+#  - file_name
+  - first_where
+  - force_unwrapping
+  - identical_operands
+#  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - last_where
+#  - legacy_multiple
+  - legacy_random
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  - lower_acl_than_parent
+  - multiline_arguments
+#  - multiline_function_chains
+#  - multiline_literal_brackets
+  - multiline_parameters
+  - nimble_operator
+  - nslocalizedstring_key
+  - number_separator
+#  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - prefixed_toplevel_constant
+  - private_action
+#  - private_outlet
+  - prohibited_super_call
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+#  - reduce_into
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - required_enum_case
+  - single_test_class
+  - sorted_first_last
+#  - static_operator
+#  - strong_iboutlet
+  - toggle_bool
+#  - trailing_closure
+#  - unavailable_function
+  - unneeded_parentheses_in_closure_argument
+  - unused_declaration
+  - unused_import
+  - vertical_parameter_alignment_on_call
+#  - vertical_whitespace_closing_braces
+  - xct_specific_matcher
+
+disabled_rules:
+  - attributes
+#  - closure_parameter_position
+  - convenience_type
+  - cyclomatic_complexity
+  - discouraged_object_literal
+  - explicit_acl
+  - explicit_enum_raw_value
+  - explicit_top_level_acl
+  - explicit_type_interface
+  - extension_access_modifier
+  - file_header
+  - file_length
+  - file_types_order
+  - function_body_length
+  - closure_parameter_position
+  - function_parameter_count
+  - identifier_name
+  - large_tuple
+  - line_length
+  - missing_docs
+  - modifier_order
+  - multiline_arguments_brackets
+  - multiline_parameters_brackets
+  - nesting
+  - no_extension_access_modifier
+  - no_grouping_extension
+  - nslocalizedstring_require_bundle
+  - prefixed_toplevel_constant
+  - prohibited_interface_builder
+  - required_deinit
+  - sorted_imports
+  - strict_fileprivate
+  - switch_case_on_newline
+  - todo
+  - trailing_whitespace
+  - type_contents_order
+  - type_body_length
+  - type_name
+  - unused_closure_parameter
+  - unowned_variable_capture
+  - untyped_error_in_catch
+  - vertical_whitespace_between_cases
+  - vertical_whitespace_opening_braces
+  - yoda_condition
+  - function_default_parameter_at_end
+  - implicit_return
+
+# Custom rules --------------------------------
+
+custom_rules:
+#  newline_after_capture_list:
+#    included: ".*\\.swift"
+#    name: "Newline after capture list"
+#    regex: '(?-s)(\{\n?.* in\n[^\n]+\w)'
+#    severity: warning
+#  capture_list_on_newline:
+#    included: ".*\\.swift"
+#    name: "Capture list on newline"
+#    regex: '(?-s)(\{.*in\n)'
+#    severity: warning
+  unnecessary_leading_void_in:
+    name: "Unnecessary -> Void in at the end of the line"
+    regex: '(-> (Void|\(\)) in$)'
+    message: "Unnecessary '-> Void in' at the end of the line. Use only 'in'"
+    severity: warning
+  deprecated_uiwebview:
+    included: ".*\\.[swift|m]"
+    excluded: ".*Tests\\.[swift|m]"
+    name: "Deprecated UIWebView Usage"
+    regex: "UIWebView"
+    match_kinds:
+      - typeidentifier
+    message: "ITMS-90809: Deprecated API Usage - Apple will stop accepting submissions of apps that use UIWebView APIs . See https://developer.apple.com/documentation/uikit/uiwebview for more information."
+    severity: warning
+
+# Directories ---------------------------------
+
+excluded:
+  - .bundle
+  - Carthage
+  - Pods
+  - Generated
+  - Vendor
+  - Templates
+
+# Don't touch this
+reporter: "xcode"
+
+# Configuration -------------------------------
+
+file_length:
+  warning: 512
+  error: 100000
+  ignore_comment_only_lines: true
+
+function_body_length:
+  warning: 128
+  error: 100000
+
+type_body_length:
+  warning: 256
+  error: 100000
+
+closure_body_length:
+  warning: 32
+  error: 100000
+
+line_length:
+  warning: 120
+  error: 100000
+  ignores_urls: true
+  ignores_function_declarations: true
+
+identifier_name:
+  min_length:
+    warning: 1
+    error: 1
+  max_lenght:
+    warning: 64
+    error: 100000
+  allowed_symbols: "_"
+
+number_separator:
+  minimum_length: 5
+  minimum_fraction_length: 5
+
+large_tuple:
+  warning: 3
+  error: 100000
+
+function_parameter_count:
+  warning: 5
+  error: 100000
+
+cyclomatic_complexity:
+  warning: 5
+  error: 100
+
+nesting:
+  type_level:
+    warning: 2
+    error: 100000
+
+#trailing_comma:
+#  mandatory_comma: true
+
+trailing_whitespace:
+  ignores_empty_lines: true
+
+# Uncomment and configure this in project's branch
+deployment_target:
+  iOS_deployment_target: "10.0"
+ # macOS_deployment_target: "10.14"
+ # watchOS_deployment_target: "5.0"
+ # tvOS_deployment_target: "12.0"

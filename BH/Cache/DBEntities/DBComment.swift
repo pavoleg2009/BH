@@ -19,7 +19,6 @@ final class DBComment: Object {
     @objc dynamic var email: String?
     @objc dynamic var body: String?
     
-    
     // MARK: Public methods
     
     override static func primaryKey() -> String? {
@@ -30,7 +29,6 @@ final class DBComment: Object {
 extension DBComment: DomainConvertible {
     
     typealias DomainType = Comment
-    
     
     // MARK: Public methods
     

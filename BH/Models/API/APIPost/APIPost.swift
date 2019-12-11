@@ -18,14 +18,13 @@ struct APIPost {
 	let body: String?
 }
 
-extension APIPost: Codable  {
+extension APIPost: Codable {
     
     // MARK: Public data structures
     
     enum CodingKeys: String, CodingKey {
         case id, userId, title, body
     }
-    
     
     // MARK: Lifecycle
     

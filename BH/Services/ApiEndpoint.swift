@@ -13,7 +13,7 @@ enum ApiEndpoint {
     case posts, users, comments
     
     func url() -> URL {
-        
+        // swiftlint:disable force_unwrapping
         switch self {
         case .posts:
             return URL(string: "http://jsonplaceholder.typicode.com/posts")!
@@ -22,5 +22,6 @@ enum ApiEndpoint {
         case .comments:
             return URL(string: "http://jsonplaceholder.typicode.com/comments")!
         }
+        // swiftlint:enabe force_unwrapping
     }
 }

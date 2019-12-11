@@ -10,7 +10,7 @@ import Foundation
 
 // Отдельный таргет для асинхронных тестов?? :wat?:
 
-public func duration(_ block: () -> ()) -> TimeInterval {
+public func duration(_ block: () -> Void) -> TimeInterval {
     let startTime = Date()
     block()
     return Date().timeIntervalSince(startTime)

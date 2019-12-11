@@ -25,7 +25,6 @@ extension APICompany: Codable {
 		case name, catchPhrase, bs
 	}
 
-    
     // MARK: Lifecycle
     
 	init(from decoder: Decoder) throws {

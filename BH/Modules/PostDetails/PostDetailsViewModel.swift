@@ -34,7 +34,6 @@ final class PostDetailsViewModel: PostDetailsViewModelType {
     let isLoading: Driver<Bool>
     let errorMessage: Driver<String>
     
-    
     // MARK: Private properties
     
     private let postsCache: PostsCache
@@ -43,7 +42,6 @@ final class PostDetailsViewModel: PostDetailsViewModelType {
     private let bag = DisposeBag()
     private let commentsCountBRelay: BehaviorRelay<String> = .init(value: "Loading...")
     private let errorMessagePublisher: PublishSubject<String> = .init()
-    
     
     // MARK: Lifecycle
     
@@ -60,7 +58,7 @@ final class PostDetailsViewModel: PostDetailsViewModelType {
         isLoading = Observable.from([
             comments.asObservable().map { _ in false },
             errorMessagePublisher.asObservable().map { _ in false }
-            ])
+        ])
             .merge()
             .startWith(true)
             .asDriver(onErrorJustReturn: false)
@@ -80,7 +78,6 @@ final class PostDetailsViewModel: PostDetailsViewModelType {
             }).disposed(by: bag)
     }
     
-    
     // MARK: Private methods
     
     private func loadCommentsFromCache() {
@@ -95,13 +92,12 @@ final class PostDetailsViewModel: PostDetailsViewModelType {
         let commentsResult = postsService
             .getComments(for: postId)
         
-        let errorHandler: (Error) -> Observable<[Comment]> = { [weak self] (error) in
+        let errorHandler: (Error) -> Observable<[Comment]> = { [weak self] error in
             
             guard let strongSelf = self else { return .never() }
             if let error = error as? ApiError {
                 strongSelf.errorMessagePublisher.onNext(error.errorMessage())
-            }
-            else  {
+            } else {
                 strongSelf.errorMessagePublisher.onNext((error as NSError).localizedDescription)
             }
             return .never()
@@ -111,6 +107,6 @@ final class PostDetailsViewModel: PostDetailsViewModelType {
             .catchError(errorHandler)
             .subscribe(onNext: { [weak self] comments in
                 self?.postsCache.saveItems(items: comments)
-            }).disposed(by:bag)
+            }).disposed(by: bag)
     }
 }

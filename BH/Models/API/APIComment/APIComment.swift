@@ -27,7 +27,6 @@ extension APIComment: Codable {
 		case postId, id, name, email, body
 	}
 
-    
     // MARK: Lifecycle
     
 	init(from decoder: Decoder) throws {

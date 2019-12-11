@@ -29,12 +29,11 @@ final class PostsCacheMock: PostsCache {
     var inMemoryIdentifier: String = UUID().uuidString
     var initialState: InitialState = .empty
     
-    
     // MARK: Public methods
     
     func saveItems<T: DatabaseConvertible>(items: [T]) {
         try? realm.write {
-            realm.add(items.map { $0.databaseModel()} , update: .modified)
+            realm.add(items.map { $0.databaseModel() }, update: .modified)
         }
     }
     
@@ -83,19 +82,20 @@ final class PostsCacheMock: PostsCache {
     
     private func preporulate() {
         
+        // swiftlint:disable:next force_try
         try! realm.write {
             
             TestsHelper.posts
                 .map { $0.databaseModel() }
                 .forEach {
                     realm.add($0, update: .modified)
-            }
+                }
             
             TestsHelper.comments
                 .map { $0.databaseModel() }
                 .forEach {
                     realm.add($0, update: .modified)
-            }
+                }
         }
     }
 }

@@ -20,7 +20,6 @@ final class PostDetailsViewController: UIViewController {
     @IBOutlet private weak var commentsCount: UILabel!
     @IBOutlet private weak var tableView: UITableView!
 
-    
     // MARK: Puplic properties
     
     var viewModel: PostDetailsViewModelType! {
@@ -29,11 +28,9 @@ final class PostDetailsViewController: UIViewController {
         }
     }
     
-    
     // MARK: Private properties
     
     private let bag = DisposeBag()
-    
     
     // MARK: Lifecycle
     

@@ -28,6 +28,4 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         router.setRoot(for: window)
     }
-
 }
-

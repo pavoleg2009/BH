@@ -24,7 +24,6 @@ extension APIGeo: Codable {
 		case lat, lng
 	}
 
-    
     // MARK: Lifecycle
     
 	init(from decoder: Decoder) throws {

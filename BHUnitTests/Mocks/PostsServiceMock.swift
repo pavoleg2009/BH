@@ -19,11 +19,9 @@ final class PostsServiceMock: PostsService {
         case error(Error)
     }
     
-    
     // MARK: Public properties
     
     var getPostsExpectedResult: GetPostsExpectedResult = .success
-    
     
     // MARK: Public methods
     

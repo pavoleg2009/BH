@@ -15,7 +15,6 @@ final class PostsViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    
     // MARK: Public properties
     
     var viewModel: PostsViewModelProtocol! {
@@ -23,7 +22,6 @@ final class PostsViewController: UIViewController {
             configure(using: viewModel)
         }
     }
-    
     
     // MARK: Private properties
     
@@ -37,7 +35,6 @@ final class PostsViewController: UIViewController {
     
     private let bag = DisposeBag()
     
-    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -47,7 +44,6 @@ final class PostsViewController: UIViewController {
         tableView.refreshControl = refreshControl
         title = "Posts"
     }
-    
     
     // MARK: Private methods
     
@@ -111,5 +107,3 @@ final class PostsViewController: UIViewController {
             .disposed(by: bag)
     }
 }
-
-

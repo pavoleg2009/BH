@@ -18,7 +18,6 @@ final class DBPost: Object {
     @objc dynamic var body: String?
     @objc dynamic var user: DBUser?
     
-    
     // MARK: Public methods
     
     override static func primaryKey() -> String? {
@@ -29,7 +28,6 @@ final class DBPost: Object {
 extension DBPost: DomainConvertible {
     
     typealias DomainType = Post
-    
     
     // MARK: Public methods
     

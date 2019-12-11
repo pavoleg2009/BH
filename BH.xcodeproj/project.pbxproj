@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -456,6 +456,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CF98F9421B1B8D200360826 /* Build configuration list for PBXNativeTarget "BH" */;
 			buildPhases = (
+				7C34C1A423A0DB7300842C1F /* SwiftLint */,
 				86D36595391E6272A4F157B7 /* [CP] Check Pods Manifest.lock */,
 				8CF98F7E21B1B8D000360826 /* Sources */,
 				8CF98F7F21B1B8D000360826 /* Frameworks */,
@@ -603,6 +604,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BH/Pods-BH-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7C34C1A423A0DB7300842C1F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint --config \"$SRCROOT/swiftlint.yml\"\n    else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    fi\nfi\n";
 		};
 		86D36595391E6272A4F157B7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

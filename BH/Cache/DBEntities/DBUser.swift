@@ -15,8 +15,8 @@ final class DBUser: Object {
     
     @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
-    @objc dynamic var username: String? = nil
-    @objc dynamic var email: String? = nil
+    @objc dynamic var username: String?
+    @objc dynamic var email: String?
     
     override static func primaryKey() -> String? {
         return "id"
@@ -26,7 +26,6 @@ final class DBUser: Object {
 extension DBUser: DomainConvertible {
     
     typealias DomainType = User
-    
     
     // MARK: Public methods
     
@@ -39,4 +38,3 @@ extension DBUser: DomainConvertible {
             email: email)
     }
 }
-
